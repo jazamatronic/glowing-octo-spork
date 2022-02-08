@@ -19,13 +19,13 @@ set output "filename"
 
 ## some examples:
 
-db/results/reports/dynamic\_domain\_currents:
-time    GND     VDD     VSS
-5        0.0008694263941         0.0007308705451          0.000540191632
-10         0.00138208762           0.00121617599         0.0009418759824
+db/results/reports/dynamic\_domain\_currents:  
+time    GND     VDD     VSS  
+5        0.0008694263941         0.0007308705451          0.000540191632  
+10         0.00138208762           0.00121617599         0.0009418759824  
 
 ## plots time vs (GND + VSS) and time vs VDD
-plot 'db/results/reports/dynamic\_domain\_currents' using 1:($2 + $4) with lines, '' using 1:3 with lines
+plot 'db/results/reports/dynamic\_domain\_currents' using 1:($2 + $4) with lines, \'\' using 1:3 with lines
 
 ## change the ranges
 set xrange [-10:10]
