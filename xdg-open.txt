@@ -1,0 +1,13 @@
+Does xdg-open get all up in your face by opening the least helpful tool for the job?
+
+If so, change its mind like this:
+
+$ xdg-mime query filetype /data/faust/fm.dsp 
+text/x-csrc
+$ xdg-mime query default text/x-csrc
+org.gnome.gedit.desktop
+
+ugh
+
+$ xdg-mime default gvim.desktop text/x-csrc
+

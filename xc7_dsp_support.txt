@@ -1,0 +1,43 @@
+[20:21] < sf-slack> <acomodi> nimh: DSPs are not currently supported, and they would need to be added to the architecture data in symbiflow-arch-defs
+[20:22] < nimh> ok - is there some technical reason that hasn't been done, or it just needs someone to do it?
+[20:22] < nimh> and is that something I could do armed with ug479_7Series_DSP48E1.pdf or is it more involved?
+[20:24] < sf-slack> <acomodi> Just needs someone to do it actually, the DSP is already documented in prjxray for bitstream generation, and what is needed is the information for VPR to
+                    correctly use it in PnR
+[20:25] < sf-slack> <acomodi> Yeah, that can come in handy, as well as previous PRs that aimed at adding support for missing primitives (e.g.
+                    https://github.com/SymbiFlow/symbiflow-arch-defs/pull/2053)
+[20:26] < nimh> acomodi - okay, thanks.  I will take a look time permitting.  I followed the symbiflow-examples guide for installing things, do I also need to clone symbofilow-arch-defs or
+                is that already done when installing symbiflow-examples?
+[20:36] < sf-slack> <acomodi> nimh: you'd need to clone that as well. Bascially symbiflow-arch-defs generates all the architecture data and routing graphs binaries and uploads them in a
+                    bucket, where they are fetched in symbiflow-examples
+[20:43] < nimh> acomodi, right you are, I'll get that underway.  I thought I saw some docs somewhere on how to add stuff to VPR?
+
+[22:06] < nimh> acomodi: - is this what needs to be done for the dsp48e1? https://symbiflow.readthedocs.io/en/latest/toolchain-desc/yosys.html#technology-mapping-in-symbiflow-toolchain
+[22:06] < tpb> Title: Yosys - SymbiFlow (at symbiflow.readthedocs.io)
+[22:06] < nimh> i.e. create the model.xml and pb_type.xml?
+[22:09] < sf-slack> <acomodi> Indeed, this is part of what needs to be done, other than that there would be the addition of the tech mapping to the VPR primitive and the addition of the new 
+                    pb_type to the cmake infrastructure (much similarly I think as it happens for PR#2053)
+[22:28] < nimh> got it, thanks.
+
+
+/data/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml
+
+https://symbiflow.readthedocs.io/en/latest/
+https://symbiflow.readthedocs.io/en/latest/vtr-verilog-to-routing/doc/src/vpr/index.html
+https://symbiflow.readthedocs.io/en/latest/vtr-verilog-to-routing/doc/src/arch/index.html#fpga-architecture-description
+https://symbiflow.readthedocs.io/en/latest/vtr-verilog-to-routing/doc/src/arch/reference.html#arch-reference
+
+https://symbiflow.readthedocs.io/en/latest/toolchain-desc/yosys.html#technology-mapping-for-vpr
+https://symbiflow.readthedocs.io/en/latest/toolchain-desc/yosys.html#technology-mapping-in-symbiflow-toolchain
+
+https://mithro-vtr.readthedocs.io/en/latest/arch/reference.html#arch-metadata
+
+
+Day changed to 18 Feb 2022
+[00:12] < nimh> Hi - I still have some questions regarding the fasm_params in the pb_type.xml
+[00:13] < nimh> are they to map to the entries in the prjxray-db?
+[00:14] < nimh> e.g. for the dsp I see files like prjxray-db/artix7/segbits_dsp_r.db
+[00:14] < nimh> it has entries like DSP_R.DSP48.DSP_0.ZAREG_2_ACASCREG_1 26_139
+[00:15] < nimh> It's still not clear to me how I map the synthesis attributes to this kind of thing
+[00:16] < nimh> or am I barking up the wrong tree?
+[00:24] < nimh> is this what I should be reading? https://symbiflow.readthedocs.io/projects/prjxray/en/latest/dev_database/common/segbits.html
+

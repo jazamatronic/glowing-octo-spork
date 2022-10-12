@@ -1,0 +1,22 @@
+KiCad:
+  File -> Plot:
+  Plot Format = DXF
+  
+  Include Layers:
+    Edge.Cuts
+    Courtyad
+    Fab
+  
+  General Options:
+    Plot Edge.Cuts on all layers
+  
+  DXF Options:
+    Export Units = mm
+    uncheck:
+      Plot graphic items using their contours
+      Use KiCad font to plot text
+  
+LibreCAD:
+  File->Import->Block  
+      
+      
