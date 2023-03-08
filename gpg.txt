@@ -1,0 +1,8 @@
+Passphrase encryption:
+  gpg --symmetric <file>
+
+Export pub key:
+  gpg --armor --export
+
+Generate password: - not great...
+  gpg --gen-random --armor 1 14

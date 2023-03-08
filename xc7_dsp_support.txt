@@ -41,3 +41,5 @@ Day changed to 18 Feb 2022
 [00:16] < nimh> or am I barking up the wrong tree?
 [00:24] < nimh> is this what I should be reading? https://symbiflow.readthedocs.io/projects/prjxray/en/latest/dev_database/common/segbits.html
 
+
+https://scholarworks.umass.edu/cgi/viewcontent.cgi?article=2318&context=masters_theses_2

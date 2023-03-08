@@ -1,0 +1,6 @@
+// create a new branch
+git switch -c <new_branch_name>
+
+// make some changes, add and commit them
+git push -u origin <new_branch_name>
+

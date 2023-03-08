@@ -1,0 +1,11 @@
+# create a new virtual env
+python3 -m venv <name>
+
+# optionally with some requirements
+python3 -m venv <name> -r requirements.txt
+
+# activate it by sourcing activate script
+source <venv>/bin/activate
+
+# install fun new things in it
+pip install <fun>

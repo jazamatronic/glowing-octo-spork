@@ -1,0 +1,2 @@
+# convert to 16bit PCM 1 channel 48k wave
+sox <in.wav> -r 48000 -c 1 -b 16 -e s <out.wav>
