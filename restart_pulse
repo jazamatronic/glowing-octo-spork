@@ -1,0 +1,10 @@
+#systemctl --user restart pulseaudio.service
+
+systemctl --user stop pulseaudio.socket
+systemctl --user stop pulseaudio.service
+sudo rmmod snd_hda_intel 
+sudo modprobe snd_hda_intel bdl_pos_adj=48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48
+systemctl --user restart pulseaudio.service
+systemctl --user restart pulseaudio.socket
+qjackctl 
+

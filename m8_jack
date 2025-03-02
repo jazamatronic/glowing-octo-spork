@@ -1,0 +1,13 @@
+In pavucontrol make sure that the M8 is off so pulseaudio doesn't grab it.
+To see devices recognised by alsa run:
+  aplay -l 
+and look for:
+
+card 1: M8 [M8], device 0: USB Audio [USB Audio]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+
+The corresponding alsa_in command to run is then:
+  alsa_in -d hw:1
+
+In qjackctl you can now connect teh alsa_in client to system playback

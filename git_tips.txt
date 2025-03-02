@@ -4,3 +4,21 @@ git switch -c <new_branch_name>
 // make some changes, add and commit them
 git push -u origin <new_branch_name>
 
+// delete a branch locally after merge
+git branch -d <branch> 
+
+// see remote branches
+git branch -r
+
+// delete remote branch after it's been merged and removed locally
+git push <remote> --delete <branch>
+e.g.
+git push origin --delete dev_branch
+
+// create an annotated tag locally then push to remote
+git tag <tag> -a
+git push --tags
+
+//delete a tag locally then remote
+git tag -d <tag>
+git push --delete origin <tag>
