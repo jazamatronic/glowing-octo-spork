@@ -25,5 +25,7 @@ amaranth:
 pip3 install --user --upgrade amaranth
 mv ~/.local/bin/amaranth-rpc $VIRTUAL_ENV/bin/
 
+in vscodium:
+install ms-python, jupyter, vaporview and TerosHDL extensions
 
 
